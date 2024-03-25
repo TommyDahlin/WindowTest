@@ -34,7 +34,7 @@ public class GameLoop implements Runnable{
     private void update(){
         game.update();
         ups++;
-    };
+    }
     private void printStats(){
         if (System.currentTimeMillis() > nextStatTime) {
             System.out.println(String.format("FPS: %d, UPS: %d", fps, ups));
