@@ -18,12 +18,13 @@ public class GameLoop implements Runnable{
             double lastRenderTimeInSeconds = (currentTime - lastUpdate) / 1000d;
             accumulator += lastRenderTimeInSeconds;
             lastUpdate = currentTime;
-
-            while (accumulator > updateRate) {
-                update();
-                accumulator -= updateRate;
+            if (accumulator >= updateRate) {
+                while (accumulator > updateRate) {
+                    update();
+                    accumulator -= updateRate;
+                }
+                render();
             }
-            render();
             printStats();
         }
     }
