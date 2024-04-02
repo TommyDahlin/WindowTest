@@ -13,10 +13,10 @@ public class Square extends GameObject {
         BufferedImage image = new BufferedImage(50,50,BufferedImage.TYPE_INT_RGB);
         Graphics2D graphics = image.createGraphics();
 
-        graphics.setColor(Color.CYAN);
+        graphics.setColor(Color.BLUE);
         graphics.fillRect(0,0, size.getWidth(), size.getHeight());
 
         graphics.dispose();
-        return null;
+        return image;
     }
 }
